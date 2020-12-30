@@ -1,36 +1,28 @@
 # import Algo's
-import DeepLearning, HaarCascade, RectanglesCreator
+import DeepLearning
+import HaarCascade
+import RectanglesCreator
 from matplotlib import pyplot
 
 # Image PTAH
-imageDir = '../public/images/test3.png'
+imagePath = '../public/images/'
+imageDir = imagePath + 'test2.jpg'
 
 # choose detection algo
-detectionAlg = 'Haar'  # Haar or DeepLearn
-
-
-# Should i create a switch case?!
-def printerSwitch(img, imgdir, result_list, Algorithm):
-    RectanglesCreator.draw_image_for_haar_cascade(img, result_list) if detectionAlg == 'Haar' \
-        else RectanglesCreator.draw_image_for_deep_learning(imgdir, result_list, Algorithm)
+detectionAlg = 'DeepLearn'  # Haar or DeepLearn
 
 
 def main():
     img = pyplot.imread(imageDir)
-    print('Image vectors:\n', img)
-    if detectionAlg == 'Haar':
-        haar_face = HaarCascade.haar_cascade(img)
 
-        # # print bounding box for each detected face
-        # RectanglesCreator.draw_image_with_boxes(filename, res)
-        printerSwitch(None, imageDir, haar_face, None)
+    if detectionAlg == 'Haar':
+        faces = HaarCascade.haar_cascade(img)
 
     elif detectionAlg == 'DeepLearn':
-        deep_faces = DeepLearning.detectFaces(img)
+        faces = (face['box'] for face in DeepLearning.detectFaces(img))
 
-        # # print bounding box for each detected face
-        # RectanglesCreator.draw_image_with_boxes(filename, faces)
-        printerSwitch(None, imageDir, deep_faces, detectionAlg)
+    # print bounding box for each detected face
+    RectanglesCreator.draw_image(imageDir, faces)
 
 
 if __name__ == '__main__':
