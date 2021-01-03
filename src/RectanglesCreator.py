@@ -14,7 +14,6 @@ def draw_image(imageDir, result_list):
 
     # plot each box
     for result in result_list:
-        print(result)
         # get coordinates
         x, y, width, height = result
         # create the shape
@@ -23,3 +22,4 @@ def draw_image(imageDir, result_list):
         ax.add_patch(rect)
     # show the plot
     pyplot.show()
+    print("Done.")
