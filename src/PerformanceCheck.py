@@ -3,12 +3,12 @@ import cProfile
 import pstats
 
 # import python script to check
-import main
+from main import main
 
 # func for checking performance of a python script
 def perfCheck():
     # perform the performance check
-    toCheck = 'main.main()'
+    toCheck = 'main()'
     saveTo = 'stats.txt'
     cProfile.run(toCheck, saveTo)
 
