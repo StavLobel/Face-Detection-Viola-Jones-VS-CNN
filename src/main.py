@@ -1,6 +1,6 @@
 # import Algo's
-import DeepLearning
-import HaarCascade
+import CNN
+import ViolaJones
 import RectanglesCreator
 from matplotlib import pyplot
 
@@ -12,11 +12,11 @@ imageDir = imagePath + 'test2.jpg'
 def main(detectionalg=None):
     img = pyplot.imread(imageDir)
 
-    if detectionalg == 'Haar':
-        faces = HaarCascade.haar_cascade(img)
+    if detectionalg == 'ViolaJones':
+        faces = ViolaJones.violaJones(img)
 
-    elif detectionalg == 'DeepLearn':
-        faces = (face['box'] for face in DeepLearning.detectFaces(img))
+    elif detectionalg == 'CNN':
+        faces = (face['box'] for face in CNN.detectCNN(img))
     else:
         raise IOError("Detection method does not specified.")
 
@@ -25,4 +25,4 @@ def main(detectionalg=None):
 
 
 if __name__ == '__main__':
-    main()  # Haar or DeepLearn
+    main()  # 'ViolaJones' or 'CNN'

@@ -2,7 +2,7 @@
 from mtcnn.mtcnn import MTCNN
 
 
-def detectFaces(img):
+def detectCNN(img):
     detector = MTCNN()
     # detect faces in the image
     faces = detector.detect_faces(img)
