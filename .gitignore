@@ -26,6 +26,7 @@
 .idea/
 venv/
 .gitattributes
+stats.txt
 
 # Generated files
 .idea/**/contentModel.xml
