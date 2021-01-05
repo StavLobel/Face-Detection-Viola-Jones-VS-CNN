@@ -8,7 +8,8 @@ from main import main
 # func for checking performance of a python script
 def perfCheck():
     # perform the performance check
-    toCheck = 'main()'
+    detectAlg = 'DeepLearn'
+    toCheck = f"main('{detectAlg}')"
     saveTo = 'stats.txt'
     cProfile.run(toCheck, saveTo)
 

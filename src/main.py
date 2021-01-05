@@ -8,16 +8,14 @@ from matplotlib import pyplot
 imagePath = '../public/images/'
 imageDir = imagePath + 'test2.jpg'
 
-# choose detection algo
-detectionAlg = 'DeepLearn'  # Haar or DeepLearn
 
-def main():
+def main(detectionalg=None):
     img = pyplot.imread(imageDir)
 
-    if detectionAlg == 'Haar':
+    if detectionalg == 'Haar':
         faces = HaarCascade.haar_cascade(img)
 
-    elif detectionAlg == 'DeepLearn':
+    elif detectionalg == 'DeepLearn':
         faces = (face['box'] for face in DeepLearning.detectFaces(img))
     else:
         raise IOError("Detection method does not specified.")
@@ -27,4 +25,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    main()  # Haar or DeepLearn
