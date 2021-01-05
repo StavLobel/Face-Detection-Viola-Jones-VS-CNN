@@ -8,7 +8,7 @@ from main import main
 # func for checking performance of a python script
 def perfCheck():
     # choose alg, 'ViolaJones' or 'CNN'
-    detectAlg = 'CNN'
+    detectAlg = 'ViolaJones'
 
     # The performance check
     toCheck = f"main('{detectAlg}')"
