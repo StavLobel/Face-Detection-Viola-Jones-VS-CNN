@@ -9,10 +9,13 @@ from main import main
 def perfCheck():
     # choose alg, 'ViolaJones' or 'CNN'
     detectAlg = 'CNN'
+
+    # The performance check
     toCheck = f"main('{detectAlg}')"
     saveTo = 'stats.txt'
     cProfile.run(toCheck, saveTo)
 
+    # Printing the results
     p = pstats.Stats(saveTo)
     p.sort_stats('cumulative').print_stats(10)
 

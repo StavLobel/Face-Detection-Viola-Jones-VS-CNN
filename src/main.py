@@ -10,6 +10,7 @@ imageDir = imagePath + 'test2.jpg'
 
 
 def main(detectionalg=None):
+    # Load Images
     img = pyplot.imread(imageDir)
 
     if detectionalg == 'ViolaJones':
