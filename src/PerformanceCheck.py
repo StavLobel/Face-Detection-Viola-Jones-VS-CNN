@@ -15,9 +15,9 @@ imageType = 'MultiFace'
 # Images path
 imagePath = '../public/images/' + imageType + '/'
 # choose alg, 'ViolaJones' or 'CNN'
-detectAlg = 'ViolaJones'
+detectAlg = 'CNN'
 # show detection results on screen
-show = False
+show = True
 # var for storing times
 times = []
 
