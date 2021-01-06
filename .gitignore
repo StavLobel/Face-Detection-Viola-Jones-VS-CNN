@@ -26,7 +26,6 @@
 .idea/
 venv/
 .gitattributes
-#public/images/Results/*
 
 # Generated files
 .idea/**/contentModel.xml
