@@ -1,27 +1,35 @@
 # import python script to check
 from main import main
+
+# import avg function
 from statistics import mean
+# import time library
 import time
+
+# import sys for manipulating output
 import sys
 
-# Images type
+# ***The test parameters***
+# Images DB type
 imageType = 'MultiFace'
-# Image PTAH
+# Images path
 imagePath = '../public/images/' + imageType + '/'
 # choose alg, 'ViolaJones' or 'CNN'
-detectAlg = 'CNN'
-# show detection results
-show = True
-# var for times
+detectAlg = 'ViolaJones'
+# show detection results on screen
+show = False
+# var for storing times
 times = []
 
-# open results file
+# open the results file for writing
 f = open('test.txt', 'w')
 if not f:
     raise IOError("Can't open file.")
+
 # change stdout to file
 original_stdout = sys.stdout
 sys.stdout = f
+
 
 # the test
 def test():
@@ -38,8 +46,9 @@ def test():
 
     print(f"\nAverage time is: {round(mean(times), 2)}")
 
-def endOfTest(f):
-    # closing file, change back stdout and print results
+# closing file, change back stdout and print results
+def endOfTest():
+    global f
     sys.stdout = original_stdout
     f.close()
 
@@ -47,5 +56,6 @@ def endOfTest(f):
     print(f.read())
     f.close()
 
+
 test()
-endOfTest(f)
+endOfTest()
