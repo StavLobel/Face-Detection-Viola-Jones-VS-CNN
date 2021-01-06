@@ -26,7 +26,6 @@
 .idea/
 venv/
 .gitattributes
-stats.txt
 public/images/Results/
 
 # Generated files
@@ -122,7 +121,4 @@ fabric.properties
 .idea/codestream.xml
 
 # End of https://www.toptal.com/developers/gitignore/api/pycharm,opencv
-src/stats.txt
 src/test.txt
-src/__pycache__/main.cpython-38.pyc
-src/__pycache__/main.cpython-38.pyc
