@@ -9,6 +9,13 @@ import time
 # import sys for manipulating output
 import sys
 
+# Creat results directory
+import os
+try:
+    os.stat('../public/images/Results')
+except:
+    os.mkdir('../public/images/Results')
+
 # ***The test parameters***
 # Images DB type
 imageType = 'MultiFace'
@@ -20,6 +27,7 @@ detectAlg = 'CNN'
 show = True
 # var for storing times
 times = []
+
 
 # open the results file for writing
 f = open('test.txt', 'w')
