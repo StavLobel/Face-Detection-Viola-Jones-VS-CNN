@@ -22,4 +22,3 @@ def draw_image(imageDir, result_list):
         ax.add_patch(rect)
     # show the plot
     pyplot.show()
-    print("Done.")
