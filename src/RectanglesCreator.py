@@ -4,8 +4,8 @@ import ntpath
 
 
 # draw an image with detected objects
-def draw_image(imageDir, result_list):
-    resDir = '../public/images/Results/'
+def drawImage(imageDir, result_list):
+    resDir = '../public/images/results/'
     # load the image
     data = pyplot.imread(imageDir)
     name = resDir + ntpath.basename(imageDir)

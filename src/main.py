@@ -19,7 +19,7 @@ def main(param=None):
 
     if param['Show']:
         # print bounding box for each detected face
-        RectanglesCreator.draw_image(param['imageDir'], faces)
+        RectanglesCreator.drawImage(param['imageDir'], faces)
 
     return len(faces)
 

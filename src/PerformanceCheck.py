@@ -12,13 +12,13 @@ import sys
 # Creat results directory
 import os
 try:
-    os.stat('../public/images/Results')
+    os.stat('../public/images/results')
 except:
-    os.mkdir('../public/images/Results')
+    os.mkdir('../public/images/results')
 
 # ***The test parameters***
 # Images DB type
-imageType = 'MultiFace'
+imageType = 'multi_face'
 # Images path
 imagePath = '../public/images/' + imageType + '/'
 # choose alg, 'ViolaJones' or 'CNN'
